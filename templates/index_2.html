@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <link rel="stylesheet" type="text/css" href={{href}} />
+{% endblock %}
+
+{% block content %}
+    <div class="form-group">
+        <h2>Список профессий</h2>
+        {% if ul_list == True%}
+            <ul>
+                {% for prof in prof_list %}
+                    <li>{{prof}}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <ol>
+                {% for prof in prof_list %}
+                    <li>{{prof}}</li>
+                {% endfor %}
+            </ol>
+        {% endif %}
+    </div>
+{% endblock %}
